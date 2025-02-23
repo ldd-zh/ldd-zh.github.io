@@ -1,0 +1,363 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using https://github.com/wa-lang/wabook -->
+        <meta charset="UTF-8">
+        <title>初始化与关闭 - linux设备驱动</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../static/wabook/css/variables.css">
+        <link rel="stylesheet" href="../static/wabook/css/general.css">
+        <link rel="stylesheet" href="../static/wabook/css/chrome.css">
+        <link rel="stylesheet" href="../static/wabook/css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../static/wabook/FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../static/wabook/fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../static/wabook/highlight.css">
+        <link rel="stylesheet" href="../static/wabook/tomorrow-night.css">
+        <link rel="stylesheet" href="../static/wabook/ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('wabook-theme');
+                var sidebar = localStorage.getItem('wabook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('wabook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('wabook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('wabook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('wabook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter">
+  <li class="chapter-item expanded ">
+    <a href="../index.html" >linux设备驱动</a>
+  </li>
+  <li class="chapter-item expanded ">
+    <a href="../preface.html" >前言</a>
+  </li>
+  <li class="chapter-item expanded ">
+    <a href="../ch1/chapter_1.html" ><strong aria-hidden="true">1.</strong> 设备驱动简介</a>
+  </li>
+  <ol class="section">
+    <li class="chapter-item expanded ">
+      <a href="../ch1/chapter_1.1.html" ><strong aria-hidden="true">1.1.</strong> 设备驱动的角色</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../ch1/chapter_1.2.html" ><strong aria-hidden="true">1.2.</strong> 内核的划分</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../ch1/chapter_1.3.html" ><strong aria-hidden="true">1.3.</strong> 设备和模块的分类</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../ch1/chapter_1.4.html" ><strong aria-hidden="true">1.4.</strong> 安全问题</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../ch1/chapter_1.5.html" ><strong aria-hidden="true">1.5.</strong> 版本编号</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../ch1/chapter_1.6.html" ><strong aria-hidden="true">1.6.</strong> 许可条款</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../ch1/chapter_1.7.html" ><strong aria-hidden="true">1.7.</strong> 加入内核开发社区</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../ch1/chapter_1.8.html" ><strong aria-hidden="true">1.8.</strong> 本书概述</a>
+    </li>
+  </ol>
+  <li class="chapter-item expanded ">
+    <a href="../ch2/chapter_2.html" ><strong aria-hidden="true">2.</strong> 构建和运行模块</a>
+  </li>
+  <ol class="section">
+    <li class="chapter-item expanded ">
+      <a href="../ch2/chapter_2.1.html" ><strong aria-hidden="true">2.1.</strong> 配置测试系统</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../ch2/chapter_2.2.html" ><strong aria-hidden="true">2.2.</strong> Hello World模块</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../ch2/chapter_2.3.html" ><strong aria-hidden="true">2.3.</strong> 内核模块与应用程序的对比</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../ch2/chapter_2.4.html" ><strong aria-hidden="true">2.4.</strong> 编译与加载</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../ch2/chapter_2.5.html" ><strong aria-hidden="true">2.5.</strong> 内核符号表</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../ch2/chapter_2.6.html" ><strong aria-hidden="true">2.6.</strong> 基础准备工作</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../ch2/chapter_2.7.html" class="active"><strong aria-hidden="true">2.7.</strong> 初始化与关闭</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../ch2/chapter_2.8.html" ><strong aria-hidden="true">2.8.</strong> 模块参数</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../ch2/chapter_2.9.html" ><strong aria-hidden="true">2.9.</strong> 用户空间编程</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../ch2/chapter_2.10.html" ><strong aria-hidden="true">2.10.</strong> 快速参考</a>
+    </li>
+  </ol>
+</ol>
+
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                    </div>
+
+                    <h1 class="menu-title"><a href="../index.html">linux设备驱动</a></h1>
+
+                    <div class="right-buttons">
+                        <a href="https://github.com/ldd-zh/ldd-zh.github.io" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/ldd-zh/ldd-zh.github.io/edit/master/testdata/ch2/chapter_2.7.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                    <main>
+                        
+
+                        <h1>初始化与关闭</h1>
+<p>如前所述，模块的初始化函数用于注册模块提供的各种功能。这里所说的“功能”指的是可以被应用程序访问的新功能，无论是整个驱动程序，还是新的软件抽象。初始化函数的定义通常如下所示：</p>
+<pre><code class="language-c">static int __init initialization_function(void)  
+{  
+    /* 初始化代码在这里 */  
+}  
+module_init(initialization_function);  
+</code></pre>
+<p>初始化函数应该声明为 static，因为它不需要在文件外部可见。尽管如此，这并不是强制性的规则，因为除非明确请求，否则没有函数会被导出到内核的其他部分。在函数定义中的 __init 关键字可能看起来有些奇怪；它是内核的一个提示，表示该函数仅在初始化时使用。模块加载器会在模块加载后删除初始化函数，从而将它占用的内存释放出来，以供其他用途。同样地，__initdata 关键字也用于仅在初始化过程中使用的数据。使用 __init 和 __initdata 是可选的，但值得使用。只要确保在初始化完成后不要再使用这些函数或数据结构。你可能还会在内核源代码中看到 __devinit 和 __devinitdata，它们与 __init 和 __initdata 等价，前提是内核没有配置为支持热插拔设备。我们将在第14章讨论热插拔支持。</p>
+<p>module_init 宏的使用是必须的。这个宏会向模块的目标代码中添加一个特殊的部分，指明模块初始化函数的位置。如果没有这个定义，你的初始化函数将不会被调用。</p>
+<p>模块可以注册多种不同类型的功能，包括不同类型的设备、文件系统、加密变换等。对于每个功能，都有一个特定的内核函数来完成注册。传递给内核注册函数的参数通常是描述新功能的数据结构的指针，以及所注册功能的名称。数据结构通常包含指向模块函数的指针，这样模块中的函数就可以被调用。</p>
+<p>可以注册的项目不仅仅是第1章中提到的设备类型。它们还包括串口、杂项设备、sysfs条目、/proc文件、可执行域和行规等。许多可注册的项目提供的功能与硬件无关，属于“软件抽象”的范畴。这些项目之所以可以注册，是因为它们已经集成到驱动程序的功能中（例如，/proc文件和行规等）。</p>
+<p>还有一些可以作为某些驱动程序附加功能进行注册的设施，但它们的使用非常具体，因此不值得详细讨论；它们使用的是堆叠技术，如“内核符号表”一节所述。如果你想进一步了解，可以在内核源代码中使用 grep EXPORT_SYMBOL 查找不同驱动程序提供的入口点。大多数注册函数的前缀是 register_，所以另一个查找它们的方式是使用 grep register_ 在内核源代码中搜索。</p>
+<h2>清理函数</h2>
+<p>每个复杂一点的模块都需要一个清理函数，用于注销接口并在模块被移除之前将所有资源归还给系统。这个函数的定义如下：</p>
+<pre><code class="language-c">static void __exit cleanup_function(void)  
+{  
+    /* 清理代码在这里 */  
+}  
+module_exit(cleanup_function);  
+</code></pre>
+<p>清理函数没有返回值，因此声明为 void。__exit 修饰符将代码标记为仅在模块卸载时使用（通过让编译器将其放入一个特殊的 ELF 段）。如果你的模块是直接编译进内核的，或者内核配置为不允许卸载模块，那么标记为 __exit 的函数将被直接丢弃。因此，带有 __exit 标记的函数只能在模块卸载或系统关闭时调用，其他情况下使用是错误的。</p>
+<p>同样，module_exit 声明是必须的，这样内核才能找到你的清理函数。</p>
+<p>如果你的模块没有定义清理函数，内核将不允许卸载该模块。</p>
+<h2>初始化过程中的错误处理</h2>
+<p>在向内核注册功能时，必须始终记住，注册可能会失败。即便是最简单的操作也常常需要内存分配，而所需的内存可能不可用。因此，模块代码必须始终检查返回值，确保所请求的操作已经成功。</p>
+<p>如果在注册过程中发生错误，首先要做的是判断模块是否可以继续初始化。通常情况下，模块在注册失败后仍能继续运行，只是功能会有所降低。尽可能地，你的模块应该在失败后继续执行，并提供尽可能多的功能。</p>
+<p>如果模块在某种类型的失败后确实无法加载，你必须撤销在失败前所做的所有注册操作。Linux 不维护一个每个模块的已注册功能清单，因此，如果初始化在某个阶段失败，模块必须自行回滚所有已注册的内容。如果你未能撤销已注册的项，内核将处于不稳定状态，其中包含指向已不存在代码的内部指针。在这种情况下，通常唯一的解决方法是重启系统。因此，初始化错误发生时，确保正确处理是非常重要的。</p>
+<p>错误恢复有时最好通过 goto 语句来处理。虽然我们通常不推荐使用 goto，但在这种情况下，它是非常有用的。通过在错误处理时谨慎使用 goto，可以简化很多复杂的、高度缩进的“结构化”逻辑。因此，在内核中，goto 常用于处理错误。</p>
+<p>以下示例代码（使用虚构的注册和注销函数）展示了在初始化过程中如果发生失败，如何正确处理错误：</p>
+<pre><code class="language-c">int __init my_init_function(void)
+{
+    int err;
+    /* 注册需要一个指针和名称 */
+    err = register_this(ptr1, &quot;skull&quot;);
+    if (err) goto fail_this;
+    err = register_that(ptr2, &quot;skull&quot;);
+    if (err) goto fail_that;
+    err = register_those(ptr3, &quot;skull&quot;);
+    if (err) goto fail_those;
+    return 0; /* 成功 */
+fail_those:
+    unregister_that(ptr2, &quot;skull&quot;);
+fail_that:
+    unregister_this(ptr1, &quot;skull&quot;);
+fail_this:
+    return err; /* 传播错误 */
+}
+</code></pre>
+<p>这段代码尝试注册三个（虚构的）功能。如果发生失败，goto 语句会导致只注销那些在失败前成功注册的功能。</p>
+<p>另一种方式是不使用复杂的 goto 语句，而是跟踪哪些功能已经成功注册，并在发生错误时调用模块的清理函数。清理函数会仅撤销已经成功完成的步骤。然而，这种方法需要更多的代码和CPU时间，因此在快速路径中，通常还是会使用 goto 作为最佳的错误恢复工具。</p>
+<p>my_init_function 的返回值 err 是一个错误代码。在 Linux 内核中，错误代码是负数，属于 &lt;linux/errno.h&gt; 中定义的集合。如果你希望生成自己的错误代码，而不是返回其他函数的错误代码，应该包含 &lt;linux/errno.h&gt; 以使用像 -ENODEV、-ENOMEM 等符号值。返回合适的错误代码是一个良好的实践，因为用户程序可以使用 perror 或类似工具将它们转化为有意义的字符串。</p>
+<p>显然，模块的清理函数必须撤销初始化函数所做的所有注册工作，通常（但不强制）按照注册时的逆序注销功能：</p>
+<pre><code class="language-c">void __exit my_cleanup_function(void)
+{
+    unregister_those(ptr3, &quot;skull&quot;);
+    unregister_that(ptr2, &quot;skull&quot;);
+    unregister_this(ptr1, &quot;skull&quot;);
+    return;
+}
+</code></pre>
+<p>如果初始化和清理操作涉及多个项目，goto 方法可能变得难以管理，因为所有的清理代码必须在初始化函数中重复，且标签会交织在一起。因此，有时更改代码结构会更成功。</p>
+<p>为了最小化代码重复并保持代码简洁，你可以在初始化过程中调用清理函数，每当发生错误时，清理函数会检查每个项的状态，然后撤销它的注册。代码可以像下面这样简单：</p>
+<pre><code class="language-c">struct something *item1;
+struct somethingelse *item2;
+int stuff_ok;
+
+void my_cleanup(void)
+{
+    if (item1)
+        release_thing(item1);
+    if (item2)
+        release_thing2(item2);
+    if (stuff_ok)
+        unregister_stuff();
+    return;
+}
+
+int __init my_init(void)
+{
+    int err = -ENOMEM;
+    item1 = allocate_thing(arguments);
+    item2 = allocate_thing2(arguments2);
+    if (!item1 || !item2)
+        goto fail;
+    err = register_stuff(item1, item2);
+    if (!err)
+        stuff_ok = 1;
+    else
+        goto fail;
+    return 0; /* 成功 */
+
+fail:
+    my_cleanup();
+    return err;
+}
+</code></pre>
+<p>如上所示，可能需要或不需要外部标志来标记初始化步骤的成功，具体取决于你调用的注册/分配函数的语义。无论是否需要标志，这种初始化方法能很好地扩展到多个项目，并且通常比之前提到的方法更好。然而，请注意，当清理函数被非退出代码调用时，它不能标记为 __exit。</p>
+<h2>模块加载中的竞态条件</h2>
+<p>到目前为止，我们讨论的内容略过了模块加载中的一个重要方面：竞态条件。如果你在编写初始化函数时不小心，可能会造成一些情形，从而危及整个系统的稳定性。我们将在本书后续章节中深入讨论竞态条件；现在，简要地提几点要点即可。</p>
+<p>首先，必须记住的是，一旦你完成了某个功能的注册，内核的其他部分可能立即开始使用该功能。换句话说，内核可能在你的初始化函数仍在运行时就调用了你的模块。因此，代码必须准备好在完成第一次注册后随时被调用。在所有支持该功能所需的内部初始化工作完成之前，不要注册任何功能。</p>
+<p>你还必须考虑，如果初始化函数决定失败，而内核的某些部分已经在使用你模块所注册的功能时会发生什么。如果你的模块存在这种情况，应该认真考虑是否完全不让初始化失败。毕竟，模块显然已经成功地导出了有用的功能。如果初始化必须失败，则必须小心绕过内核中其他地方可能正在进行的操作，直到这些操作完成。</p>
+
+
+                        
+
+                        
+
+                        
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../ch2/chapter_2.6.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+                        
+                            <!-- ../ch2/chapter_2.8.html -->
+                            <a rel="next" href="../ch2/chapter_2.8.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../ch2/chapter_2.6.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+                
+                    <a rel="next" href="../ch2/chapter_2.8.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../static/wabook/mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../static/wabook/clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../static/wabook/highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../static/wabook/book.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script type="text/javascript" charset="utf-8">
+            var pagePath = "ch2/chapter_2.7.md"
+        </script>
+
+        <!-- Custom JS scripts -->
+        
+
+    </body>
+</html>

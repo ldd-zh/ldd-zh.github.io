@@ -1,0 +1,268 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using https://github.com/wa-lang/wabook -->
+        <meta charset="UTF-8">
+        <title>设备驱动简介 - linux设备驱动</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../static/wabook/css/variables.css">
+        <link rel="stylesheet" href="../static/wabook/css/general.css">
+        <link rel="stylesheet" href="../static/wabook/css/chrome.css">
+        <link rel="stylesheet" href="../static/wabook/css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../static/wabook/FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../static/wabook/fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../static/wabook/highlight.css">
+        <link rel="stylesheet" href="../static/wabook/tomorrow-night.css">
+        <link rel="stylesheet" href="../static/wabook/ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('wabook-theme');
+                var sidebar = localStorage.getItem('wabook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('wabook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('wabook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('wabook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('wabook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter">
+  <li class="chapter-item expanded ">
+    <a href="../index.html" >linux设备驱动</a>
+  </li>
+  <li class="chapter-item expanded ">
+    <a href="../preface.html" >前言</a>
+  </li>
+  <li class="chapter-item expanded ">
+    <a href="../ch1/chapter_1.html" class="active"><strong aria-hidden="true">1.</strong> 设备驱动简介</a>
+  </li>
+  <ol class="section">
+    <li class="chapter-item expanded ">
+      <a href="../ch1/chapter_1.1.html" ><strong aria-hidden="true">1.1.</strong> 设备驱动的角色</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../ch1/chapter_1.2.html" ><strong aria-hidden="true">1.2.</strong> 内核的划分</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../ch1/chapter_1.3.html" ><strong aria-hidden="true">1.3.</strong> 设备和模块的分类</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../ch1/chapter_1.4.html" ><strong aria-hidden="true">1.4.</strong> 安全问题</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../ch1/chapter_1.5.html" ><strong aria-hidden="true">1.5.</strong> 版本编号</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../ch1/chapter_1.6.html" ><strong aria-hidden="true">1.6.</strong> 许可条款</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../ch1/chapter_1.7.html" ><strong aria-hidden="true">1.7.</strong> 加入内核开发社区</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../ch1/chapter_1.8.html" ><strong aria-hidden="true">1.8.</strong> 本书概述</a>
+    </li>
+  </ol>
+  <li class="chapter-item expanded ">
+    <a href="../ch2/chapter_2.html" ><strong aria-hidden="true">2.</strong> 构建和运行模块</a>
+  </li>
+  <ol class="section">
+    <li class="chapter-item expanded ">
+      <a href="../ch2/chapter_2.1.html" ><strong aria-hidden="true">2.1.</strong> 配置测试系统</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../ch2/chapter_2.2.html" ><strong aria-hidden="true">2.2.</strong> Hello World模块</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../ch2/chapter_2.3.html" ><strong aria-hidden="true">2.3.</strong> 内核模块与应用程序的对比</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../ch2/chapter_2.4.html" ><strong aria-hidden="true">2.4.</strong> 编译与加载</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../ch2/chapter_2.5.html" ><strong aria-hidden="true">2.5.</strong> 内核符号表</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../ch2/chapter_2.6.html" ><strong aria-hidden="true">2.6.</strong> 基础准备工作</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../ch2/chapter_2.7.html" ><strong aria-hidden="true">2.7.</strong> 初始化与关闭</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../ch2/chapter_2.8.html" ><strong aria-hidden="true">2.8.</strong> 模块参数</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../ch2/chapter_2.9.html" ><strong aria-hidden="true">2.9.</strong> 用户空间编程</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../ch2/chapter_2.10.html" ><strong aria-hidden="true">2.10.</strong> 快速参考</a>
+    </li>
+  </ol>
+</ol>
+
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                    </div>
+
+                    <h1 class="menu-title"><a href="../index.html">linux设备驱动</a></h1>
+
+                    <div class="right-buttons">
+                        <a href="https://github.com/ldd-zh/ldd-zh.github.io" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/ldd-zh/ldd-zh.github.io/edit/master/testdata/ch1/chapter_1.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                    <main>
+                        
+
+                        <h1>设备驱动简介</h1>
+<p>自由操作系统，如 Linux，具有许多优势，其中之一就是其内部结构对所有人开放。操作系统曾经是一个神秘的领域，其代码仅限少数程序员使用，而现在，任何具备相应技能的人都可以轻松地查看、理解并修改它。Linux 帮助推动了操作系统的民主化。然而，Linux 内核依然是一个庞大而复杂的代码体，想要深入研究内核的开发者需要一个入口点，这样他们才能在不被复杂性压垮的情况下接触代码。通常，设备驱动程序就充当了这个入口。</p>
+<p>设备驱动程序在 Linux 内核中扮演着特殊的角色。它们是独立的“黑盒子”，使特定硬件能够响应明确定义的内部编程接口，并完全隐藏设备工作原理的细节。用户的操作通过一组标准化的调用来执行，这些调用与具体的驱动程序无关；而将这些调用映射到针对真实硬件的设备特定操作则是设备驱动程序的职责。这个编程接口使得驱动程序可以与内核的其余部分分开编写，并在运行时根据需要“插入”进来。这种模块化使得编写 Linux 驱动程序变得非常容易，以至于现在已经有成百上千个驱动程序可供使用。</p>
+<p>有许多原因使得人们对编写 Linux 设备驱动程序感兴趣。仅硬件的更新换代速度（以及硬件的过时速度）就足以保证驱动程序开发者在可预见的未来都将保持忙碌。个人可能需要了解驱动程序，以便访问对他们有兴趣的特定设备。硬件厂商通过为其产品提供 Linux 驱动程序，可以将庞大且不断增长的 Linux 用户群体纳入其潜在市场。而 Linux 系统的开源特性意味着，如果驱动程序开发者愿意，他们可以迅速将驱动程序的源代码传播给数百万用户。</p>
+<p>本书将教你如何编写自己的驱动程序，以及如何在内核的相关部分进行修改。我们采取了设备无关的方法；编程技巧和接口在可能的情况下被呈现出来，并不依赖于任何特定设备。每个驱动程序都是不同的；作为一个驱动程序开发者，你需要深入理解你特定的设备。但大多数的原理和基本技巧对于所有驱动程序来说都是相同的。本书不能教你关于你设备的所有知识，但它为你提供了需要的背景知识，帮助你使设备正常工作。</p>
+<p>在学习编写驱动程序的过程中，你会对 Linux 内核有更多的了解；这可能帮助你理解你的机器是如何工作的，为什么有时事情并不像你期望的那样快速，或者为什么它们并不完全按你想要的方式运行。我们会逐步介绍新概念，从非常简单的驱动程序开始，逐步构建；每个新概念后面都会附带示例代码，这些代码不需要特殊硬件来进行测试。</p>
+<p>本章并不真正进入编写代码的部分。然而，我们会介绍一些 Linux 内核的背景概念，你会发现这些概念在稍后开始编程时会非常有用。</p>
+
+
+                        
+
+                        
+
+                        
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../preface.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+                        
+                            <!-- ../ch1/chapter_1.1.html -->
+                            <a rel="next" href="../ch1/chapter_1.1.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../preface.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+                
+                    <a rel="next" href="../ch1/chapter_1.1.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../static/wabook/mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../static/wabook/clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../static/wabook/highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../static/wabook/book.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script type="text/javascript" charset="utf-8">
+            var pagePath = "ch1/chapter_1.md"
+        </script>
+
+        <!-- Custom JS scripts -->
+        
+
+    </body>
+</html>

@@ -1,0 +1,11 @@
+[book]
+authors = ["ldd3"]
+description = "linux设备驱动"
+language = "zh"
+src = "."
+title = "linux设备驱动"
+
+[output.html]
+git-repository-icon = "fa-github"
+git-repository-url = "https://github.com/ldd-zh/ldd-zh.github.io"
+edit-url-template = "https://github.com/ldd-zh/ldd-zh.github.io/edit/master/testdata/{path}"
