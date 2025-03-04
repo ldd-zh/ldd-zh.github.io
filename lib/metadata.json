@@ -1,0 +1,593 @@
+{
+  "vaultName": "ldd_zh",
+  "lastExport": 1741106432134,
+  "pluginVersion": "1.8.01",
+  "validBodyClasses": "publish css-settings-manager native-scrollbars theme-light show-inline-title show-ribbon",
+  "useCustomHeadContent": false,
+  "useCustomFavicon": false,
+  "files": [
+    "第1章 设备驱动简介/1.0 设备驱动简介.md",
+    "第1章 设备驱动简介/1.1 设备驱动程序的作用.md",
+    "第1章 设备驱动简介/1.2 内核的划分.md",
+    "第1章 设备驱动简介/1.3 设备和模块的分类.md",
+    "第1章 设备驱动简介/1.4 安全问题.md",
+    "第1章 设备驱动简介/1.5 版本编号.md",
+    "第1章 设备驱动简介/1.6 许可条款.md",
+    "第1章 设备驱动简介/1.7 加入内核开发社区.md",
+    "第1章 设备驱动简介/1.8 本书概述.md",
+    "第2章 构建和运行模块/2.0  构建和运行模块.md",
+    "第2章 构建和运行模块/2.1 设置测试系统.md",
+    "第2章 构建和运行模块/2.2 Hello World 模块.md",
+    "第2章 构建和运行模块/2.3 内核模块与应用程序的区别.md",
+    "第2章 构建和运行模块/2.4 编译和加载.md",
+    "第2章 构建和运行模块/2.5 内核符号表.md",
+    "第2章 构建和运行模块/2.6 准备工作.md",
+    "第2章 构建和运行模块/2.7 初始化和关闭.md",
+    "第2章 构建和运行模块/2.8 模块参数.md",
+    "第2章 构建和运行模块/2.9 在用户空间中进行操作.md",
+    "第2章 构建和运行模块/2.10 快速参考.md",
+    "第3章 字符设备驱动/images/the_arguments_to_read.png",
+    "第3章 字符设备驱动/images/the_layer_of_a_scull_device.png",
+    "第3章 字符设备驱动/3.0 字符设备驱动.md",
+    "第3章 字符设备驱动/3.1 scull 的设计.md",
+    "第3章 字符设备驱动/3.2 主设备号和次设备号.md",
+    "第3章 字符设备驱动/3.3 一些重要的数据结构.md",
+    "第3章 字符设备驱动/3.4 字符设备注册.md",
+    "第3章 字符设备驱动/3.5 open 和 release.md",
+    "第3章 字符设备驱动/3.6 scull 的内存使用.md",
+    "第3章 字符设备驱动/3.7 read 和 write.md",
+    "第3章 字符设备驱动/3.8 使用新设备.md",
+    "第3章 字符设备驱动/3.9 快速参考.md",
+    "第4章 调试技术/4.0 调试技术.md",
+    "第4章 调试技术/4.1 内核中的调试支持.md",
+    "第4章 调试技术/4.2 通过打印调试.md",
+    "第4章 调试技术/4.3 通过查询调试.md",
+    "第4章 调试技术/4.4 通过观察调试.md",
+    "第4章 调试技术/4.5 调试系统故障.md",
+    "第4章 调试技术/4.6  调试器及相关工具.md",
+    "第5章 并发与竞态条件/5.0 并发与竞态条件.md",
+    "第5章 并发与竞态条件/5.1 scull中的陷阱.md",
+    "第5章 并发与竞态条件/5.2 并发及其管理.md",
+    "第5章 并发与竞态条件/5.3 信号量和互斥锁.md",
+    "第5章 并发与竞态条件/5.4 完成机制.md",
+    "第5章 并发与竞态条件/5.5 自旋锁.md",
+    "第5章 并发与竞态条件/5.6 锁定陷阱.md",
+    "第5章 并发与竞态条件/5.7 锁定的替代方案.md",
+    "第5章 并发与竞态条件/5.8 快速参考.md",
+    "index.md",
+    "lib/fonts/94f2f163d4b698242fef.otf",
+    "lib/fonts/72505e6a122c6acd5471.woff2",
+    "lib/fonts/2d5198822ab091ce4305.woff2",
+    "lib/fonts/c8ba52b05a9ef10f4758.woff2",
+    "lib/fonts/cb10ffd7684cd9836a05.woff2",
+    "lib/fonts/b5f0f109bc88052d4000.woff2",
+    "lib/fonts/cbe0ae49c52c920fd563.woff2",
+    "lib/fonts/535a6cf662596b3bd6a6.woff2",
+    "lib/fonts/70cc7ff27245e82ad414.ttf",
+    "lib/fonts/454577c22304619db035.ttf",
+    "lib/fonts/52ac8f3034507f1d9e53.ttf",
+    "lib/fonts/05b618077343fbbd92b7.ttf",
+    "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
+    "lib/media/6155340132a851f6089e.svg",
+    "lib/html/file-tree.html",
+    "lib/scripts/webpage.js",
+    "lib/scripts/minisearch.js",
+    "lib/media/favicon.png",
+    "lib/styles/obsidian.css",
+    "lib/styles/theme.css",
+    "lib/styles/global-variable-styles.css",
+    "lib/styles/main-styles.css",
+    "第3章-字符设备驱动/images/the_layer_of_a_scull_device.png",
+    "第3章-字符设备驱动/images/the_arguments_to_read.png"
+  ],
+  "mainDependencies": [
+    "lib/fonts/94f2f163d4b698242fef.otf",
+    "lib/fonts/72505e6a122c6acd5471.woff2",
+    "lib/fonts/2d5198822ab091ce4305.woff2",
+    "lib/fonts/c8ba52b05a9ef10f4758.woff2",
+    "lib/fonts/cb10ffd7684cd9836a05.woff2",
+    "lib/fonts/b5f0f109bc88052d4000.woff2",
+    "lib/fonts/cbe0ae49c52c920fd563.woff2",
+    "lib/fonts/535a6cf662596b3bd6a6.woff2",
+    "lib/fonts/70cc7ff27245e82ad414.ttf",
+    "lib/fonts/454577c22304619db035.ttf",
+    "lib/fonts/52ac8f3034507f1d9e53.ttf",
+    "lib/fonts/05b618077343fbbd92b7.ttf",
+    "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
+    "lib/media/6155340132a851f6089e.svg",
+    "lib/html/file-tree.html",
+    "lib/scripts/webpage.js",
+    "lib/scripts/minisearch.js",
+    "lib/media/favicon.png",
+    "lib/styles/obsidian.css",
+    "lib/styles/theme.css",
+    "lib/styles/global-variable-styles.css",
+    "lib/styles/main-styles.css"
+  ],
+  "fileInfo": {
+    "第1章 设备驱动简介/1.0 设备驱动简介.md": {
+      "modifiedTime": 1741106033430,
+      "sourceSize": 2845,
+      "exportedPath": "第1章-设备驱动简介/1.0-设备驱动简介.html",
+      "dependencies": []
+    },
+    "第1章 设备驱动简介/1.1 设备驱动程序的作用.md": {
+      "modifiedTime": 1741106033430,
+      "sourceSize": 4637,
+      "exportedPath": "第1章-设备驱动简介/1.1-设备驱动程序的作用.html",
+      "dependencies": []
+    },
+    "第1章 设备驱动简介/1.2 内核的划分.md": {
+      "modifiedTime": 1741106033430,
+      "sourceSize": 3139,
+      "exportedPath": "第1章-设备驱动简介/1.2-内核的划分.html",
+      "dependencies": []
+    },
+    "第1章 设备驱动简介/1.3 设备和模块的分类.md": {
+      "modifiedTime": 1741106033430,
+      "sourceSize": 5319,
+      "exportedPath": "第1章-设备驱动简介/1.3-设备和模块的分类.html",
+      "dependencies": []
+    },
+    "第1章 设备驱动简介/1.4 安全问题.md": {
+      "modifiedTime": 1741106033430,
+      "sourceSize": 3327,
+      "exportedPath": "第1章-设备驱动简介/1.4-安全问题.html",
+      "dependencies": []
+    },
+    "第1章 设备驱动简介/1.5 版本编号.md": {
+      "modifiedTime": 1741106033430,
+      "sourceSize": 3442,
+      "exportedPath": "第1章-设备驱动简介/1.5-版本编号.html",
+      "dependencies": []
+    },
+    "第1章 设备驱动简介/1.6 许可条款.md": {
+      "modifiedTime": 1741106033430,
+      "sourceSize": 2081,
+      "exportedPath": "第1章-设备驱动简介/1.6-许可条款.html",
+      "dependencies": []
+    },
+    "第1章 设备驱动简介/1.7 加入内核开发社区.md": {
+      "modifiedTime": 1741106033430,
+      "sourceSize": 1175,
+      "exportedPath": "第1章-设备驱动简介/1.7-加入内核开发社区.html",
+      "dependencies": []
+    },
+    "第1章 设备驱动简介/1.8 本书概述.md": {
+      "modifiedTime": 1741106033430,
+      "sourceSize": 2864,
+      "exportedPath": "第1章-设备驱动简介/1.8-本书概述.html",
+      "dependencies": []
+    },
+    "第2章 构建和运行模块/2.0  构建和运行模块.md": {
+      "modifiedTime": 1741106033430,
+      "sourceSize": 540,
+      "exportedPath": "第2章-构建和运行模块/2.0-构建和运行模块.html",
+      "dependencies": []
+    },
+    "第2章 构建和运行模块/2.1 设置测试系统.md": {
+      "modifiedTime": 1741106033430,
+      "sourceSize": 2291,
+      "exportedPath": "第2章-构建和运行模块/2.1-设置测试系统.html",
+      "dependencies": []
+    },
+    "第2章 构建和运行模块/2.2 Hello World 模块.md": {
+      "modifiedTime": 1741106033430,
+      "sourceSize": 3144,
+      "exportedPath": "第2章-构建和运行模块/2.2-hello-world-模块.html",
+      "dependencies": []
+    },
+    "第2章 构建和运行模块/2.3 内核模块与应用程序的区别.md": {
+      "modifiedTime": 1741106033430,
+      "sourceSize": 8949,
+      "exportedPath": "第2章-构建和运行模块/2.3-内核模块与应用程序的区别.html",
+      "dependencies": []
+    },
+    "第2章 构建和运行模块/2.4 编译和加载.md": {
+      "modifiedTime": 1741106033430,
+      "sourceSize": 13386,
+      "exportedPath": "第2章-构建和运行模块/2.4-编译和加载.html",
+      "dependencies": []
+    },
+    "第2章 构建和运行模块/2.5 内核符号表.md": {
+      "modifiedTime": 1741106033430,
+      "sourceSize": 2906,
+      "exportedPath": "第2章-构建和运行模块/2.5-内核符号表.html",
+      "dependencies": []
+    },
+    "第2章 构建和运行模块/2.6 准备工作.md": {
+      "modifiedTime": 1741106033430,
+      "sourceSize": 2290,
+      "exportedPath": "第2章-构建和运行模块/2.6-准备工作.html",
+      "dependencies": []
+    },
+    "第2章 构建和运行模块/2.7 初始化和关闭.md": {
+      "modifiedTime": 1741106033430,
+      "sourceSize": 9623,
+      "exportedPath": "第2章-构建和运行模块/2.7-初始化和关闭.html",
+      "dependencies": []
+    },
+    "第2章 构建和运行模块/2.8 模块参数.md": {
+      "modifiedTime": 1741106033430,
+      "sourceSize": 3775,
+      "exportedPath": "第2章-构建和运行模块/2.8-模块参数.html",
+      "dependencies": []
+    },
+    "第2章 构建和运行模块/2.9 在用户空间中进行操作.md": {
+      "modifiedTime": 1741106033430,
+      "sourceSize": 4087,
+      "exportedPath": "第2章-构建和运行模块/2.9-在用户空间中进行操作.html",
+      "dependencies": []
+    },
+    "第2章 构建和运行模块/2.10 快速参考.md": {
+      "modifiedTime": 1741106033430,
+      "sourceSize": 3512,
+      "exportedPath": "第2章-构建和运行模块/2.10-快速参考.html",
+      "dependencies": []
+    },
+    "第3章 字符设备驱动/images/the_arguments_to_read.png": {
+      "modifiedTime": 1741106033430,
+      "sourceSize": 153727,
+      "exportedPath": "第3章-字符设备驱动/images/the_arguments_to_read.png",
+      "dependencies": []
+    },
+    "第3章 字符设备驱动/images/the_layer_of_a_scull_device.png": {
+      "modifiedTime": 1741106033430,
+      "sourceSize": 90057,
+      "exportedPath": "第3章-字符设备驱动/images/the_layer_of_a_scull_device.png",
+      "dependencies": []
+    },
+    "第3章 字符设备驱动/3.0 字符设备驱动.md": {
+      "modifiedTime": 1741106033430,
+      "sourceSize": 1101,
+      "exportedPath": "第3章-字符设备驱动/3.0-字符设备驱动.html",
+      "dependencies": []
+    },
+    "第3章 字符设备驱动/3.1 scull 的设计.md": {
+      "modifiedTime": 1741106033430,
+      "sourceSize": 2442,
+      "exportedPath": "第3章-字符设备驱动/3.1-scull-的设计.html",
+      "dependencies": []
+    },
+    "第3章 字符设备驱动/3.2 主设备号和次设备号.md": {
+      "modifiedTime": 1741106033430,
+      "sourceSize": 10075,
+      "exportedPath": "第3章-字符设备驱动/3.2-主设备号和次设备号.html",
+      "dependencies": []
+    },
+    "第3章 字符设备驱动/3.3 一些重要的数据结构.md": {
+      "modifiedTime": 1741106033430,
+      "sourceSize": 14857,
+      "exportedPath": "第3章-字符设备驱动/3.3-一些重要的数据结构.html",
+      "dependencies": []
+    },
+    "第3章 字符设备驱动/3.4 字符设备注册.md": {
+      "modifiedTime": 1741106033430,
+      "sourceSize": 4747,
+      "exportedPath": "第3章-字符设备驱动/3.4-字符设备注册.html",
+      "dependencies": []
+    },
+    "第3章 字符设备驱动/3.5 open 和 release.md": {
+      "modifiedTime": 1741106033430,
+      "sourceSize": 5472,
+      "exportedPath": "第3章-字符设备驱动/3.5-open-和-release.html",
+      "dependencies": []
+    },
+    "第3章 字符设备驱动/3.6 scull 的内存使用.md": {
+      "modifiedTime": 1741106033430,
+      "sourceSize": 5690,
+      "exportedPath": "第3章-字符设备驱动/3.6-scull-的内存使用.html",
+      "dependencies": [
+        "第3章-字符设备驱动/images/the_layer_of_a_scull_device.png"
+      ]
+    },
+    "第3章 字符设备驱动/3.7 read 和 write.md": {
+      "modifiedTime": 1741106033430,
+      "sourceSize": 13621,
+      "exportedPath": "第3章-字符设备驱动/3.7-read-和-write.html",
+      "dependencies": [
+        "第3章-字符设备驱动/images/the_arguments_to_read.png"
+      ]
+    },
+    "第3章 字符设备驱动/3.8 使用新设备.md": {
+      "modifiedTime": 1741106033430,
+      "sourceSize": 793,
+      "exportedPath": "第3章-字符设备驱动/3.8-使用新设备.html",
+      "dependencies": []
+    },
+    "第3章 字符设备驱动/3.9 快速参考.md": {
+      "modifiedTime": 1741106033430,
+      "sourceSize": 2632,
+      "exportedPath": "第3章-字符设备驱动/3.9-快速参考.html",
+      "dependencies": []
+    },
+    "第4章 调试技术/4.0 调试技术.md": {
+      "modifiedTime": 1741106033430,
+      "sourceSize": 435,
+      "exportedPath": "第4章-调试技术/4.0-调试技术.html",
+      "dependencies": []
+    },
+    "第4章 调试技术/4.1 内核中的调试支持.md": {
+      "modifiedTime": 1741106033430,
+      "sourceSize": 4947,
+      "exportedPath": "第4章-调试技术/4.1-内核中的调试支持.html",
+      "dependencies": []
+    },
+    "第4章 调试技术/4.2 通过打印调试.md": {
+      "modifiedTime": 1741106033430,
+      "sourceSize": 14588,
+      "exportedPath": "第4章-调试技术/4.2-通过打印调试.html",
+      "dependencies": []
+    },
+    "第4章 调试技术/4.3 通过查询调试.md": {
+      "modifiedTime": 1741106033430,
+      "sourceSize": 20157,
+      "exportedPath": "第4章-调试技术/4.3-通过查询调试.html",
+      "dependencies": []
+    },
+    "第4章 调试技术/4.4 通过观察调试.md": {
+      "modifiedTime": 1741106033430,
+      "sourceSize": 4377,
+      "exportedPath": "第4章-调试技术/4.4-通过观察调试.html",
+      "dependencies": []
+    },
+    "第4章 调试技术/4.5 调试系统故障.md": {
+      "modifiedTime": 1741106033430,
+      "sourceSize": 13403,
+      "exportedPath": "第4章-调试技术/4.5-调试系统故障.html",
+      "dependencies": []
+    },
+    "第4章 调试技术/4.6  调试器及相关工具.md": {
+      "modifiedTime": 1741106033430,
+      "sourceSize": 15094,
+      "exportedPath": "第4章-调试技术/4.6-调试器及相关工具.html",
+      "dependencies": []
+    },
+    "第5章 并发与竞态条件/5.0 并发与竞态条件.md": {
+      "modifiedTime": 1741106033430,
+      "sourceSize": 1333,
+      "exportedPath": "第5章-并发与竞态条件/5.0-并发与竞态条件.html",
+      "dependencies": []
+    },
+    "第5章 并发与竞态条件/5.1 scull中的陷阱.md": {
+      "modifiedTime": 1741106033430,
+      "sourceSize": 1630,
+      "exportedPath": "第5章-并发与竞态条件/5.1-scull中的陷阱.html",
+      "dependencies": []
+    },
+    "第5章 并发与竞态条件/5.2 并发及其管理.md": {
+      "modifiedTime": 1741106033430,
+      "sourceSize": 2754,
+      "exportedPath": "第5章-并发与竞态条件/5.2-并发及其管理.html",
+      "dependencies": []
+    },
+    "第5章 并发与竞态条件/5.3 信号量和互斥锁.md": {
+      "modifiedTime": 1741106033430,
+      "sourceSize": 11854,
+      "exportedPath": "第5章-并发与竞态条件/5.3-信号量和互斥锁.html",
+      "dependencies": []
+    },
+    "第5章 并发与竞态条件/5.4 完成机制.md": {
+      "modifiedTime": 1741106033430,
+      "sourceSize": 4391,
+      "exportedPath": "第5章-并发与竞态条件/5.4-完成机制.html",
+      "dependencies": []
+    },
+    "第5章 并发与竞态条件/5.5 自旋锁.md": {
+      "modifiedTime": 1741106033430,
+      "sourceSize": 10485,
+      "exportedPath": "第5章-并发与竞态条件/5.5-自旋锁.html",
+      "dependencies": []
+    },
+    "第5章 并发与竞态条件/5.6 锁定陷阱.md": {
+      "modifiedTime": 1741106033430,
+      "sourceSize": 5048,
+      "exportedPath": "第5章-并发与竞态条件/5.6-锁定陷阱.html",
+      "dependencies": []
+    },
+    "第5章 并发与竞态条件/5.7 锁定的替代方案.md": {
+      "modifiedTime": 1741106033430,
+      "sourceSize": 14031,
+      "exportedPath": "第5章-并发与竞态条件/5.7-锁定的替代方案.html",
+      "dependencies": []
+    },
+    "第5章 并发与竞态条件/5.8 快速参考.md": {
+      "modifiedTime": 1741106033430,
+      "sourceSize": 4237,
+      "exportedPath": "第5章-并发与竞态条件/5.8-快速参考.html",
+      "dependencies": []
+    },
+    "第3章-字符设备驱动/images/the_layer_of_a_scull_device.png": {
+      "modifiedTime": 1741106033430,
+      "sourceSize": 90057,
+      "exportedPath": "第3章-字符设备驱动/images/the_layer_of_a_scull_device.png",
+      "dependencies": []
+    },
+    "第3章-字符设备驱动/images/the_arguments_to_read.png": {
+      "modifiedTime": 1741106033430,
+      "sourceSize": 153727,
+      "exportedPath": "第3章-字符设备驱动/images/the_arguments_to_read.png",
+      "dependencies": []
+    },
+    "lib/scripts/graph-wasm.wasm": {
+      "modifiedTime": 1741106312633,
+      "sourceSize": 23377,
+      "exportedPath": "lib/scripts/graph-wasm.wasm",
+      "dependencies": []
+    },
+    "lib/fonts/94f2f163d4b698242fef.otf": {
+      "modifiedTime": 1741106432134,
+      "sourceSize": 66800,
+      "exportedPath": "lib/fonts/94f2f163d4b698242fef.otf",
+      "dependencies": []
+    },
+    "lib/fonts/72505e6a122c6acd5471.woff2": {
+      "modifiedTime": 1741106432134,
+      "sourceSize": 104232,
+      "exportedPath": "lib/fonts/72505e6a122c6acd5471.woff2",
+      "dependencies": []
+    },
+    "lib/fonts/2d5198822ab091ce4305.woff2": {
+      "modifiedTime": 1741106432134,
+      "sourceSize": 104332,
+      "exportedPath": "lib/fonts/2d5198822ab091ce4305.woff2",
+      "dependencies": []
+    },
+    "lib/fonts/c8ba52b05a9ef10f4758.woff2": {
+      "modifiedTime": 1741106432134,
+      "sourceSize": 98868,
+      "exportedPath": "lib/fonts/c8ba52b05a9ef10f4758.woff2",
+      "dependencies": []
+    },
+    "lib/fonts/cb10ffd7684cd9836a05.woff2": {
+      "modifiedTime": 1741106432134,
+      "sourceSize": 106876,
+      "exportedPath": "lib/fonts/cb10ffd7684cd9836a05.woff2",
+      "dependencies": []
+    },
+    "lib/fonts/b5f0f109bc88052d4000.woff2": {
+      "modifiedTime": 1741106432134,
+      "sourceSize": 105804,
+      "exportedPath": "lib/fonts/b5f0f109bc88052d4000.woff2",
+      "dependencies": []
+    },
+    "lib/fonts/cbe0ae49c52c920fd563.woff2": {
+      "modifiedTime": 1741106432134,
+      "sourceSize": 106108,
+      "exportedPath": "lib/fonts/cbe0ae49c52c920fd563.woff2",
+      "dependencies": []
+    },
+    "lib/fonts/535a6cf662596b3bd6a6.woff2": {
+      "modifiedTime": 1741106432134,
+      "sourceSize": 111708,
+      "exportedPath": "lib/fonts/535a6cf662596b3bd6a6.woff2",
+      "dependencies": []
+    },
+    "lib/fonts/70cc7ff27245e82ad414.ttf": {
+      "modifiedTime": 1741106432134,
+      "sourceSize": 192740,
+      "exportedPath": "lib/fonts/70cc7ff27245e82ad414.ttf",
+      "dependencies": []
+    },
+    "lib/fonts/454577c22304619db035.ttf": {
+      "modifiedTime": 1741106432134,
+      "sourceSize": 161376,
+      "exportedPath": "lib/fonts/454577c22304619db035.ttf",
+      "dependencies": []
+    },
+    "lib/fonts/52ac8f3034507f1d9e53.ttf": {
+      "modifiedTime": 1741106432134,
+      "sourceSize": 191568,
+      "exportedPath": "lib/fonts/52ac8f3034507f1d9e53.ttf",
+      "dependencies": []
+    },
+    "lib/fonts/05b618077343fbbd92b7.ttf": {
+      "modifiedTime": 1741106432134,
+      "sourceSize": 155288,
+      "exportedPath": "lib/fonts/05b618077343fbbd92b7.ttf",
+      "dependencies": []
+    },
+    "lib/fonts/4bb6ac751d1c5478ff3a.woff2": {
+      "modifiedTime": 1741106432134,
+      "sourceSize": 7876,
+      "exportedPath": "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
+      "dependencies": []
+    },
+    "lib/media/6155340132a851f6089e.svg": {
+      "modifiedTime": 1741106432134,
+      "sourceSize": 315,
+      "exportedPath": "lib/media/6155340132a851f6089e.svg",
+      "dependencies": []
+    },
+    "lib/html/file-tree.html": {
+      "modifiedTime": 1741106432134,
+      "sourceSize": 20502,
+      "exportedPath": "lib/html/file-tree.html",
+      "dependencies": []
+    },
+    "lib/scripts/webpage.js": {
+      "modifiedTime": 1741106432134,
+      "sourceSize": 47290,
+      "exportedPath": "lib/scripts/webpage.js",
+      "dependencies": []
+    },
+    "lib/scripts/graph-view.js": {
+      "modifiedTime": 1741106312633,
+      "sourceSize": 15519,
+      "exportedPath": "lib/scripts/graph-view.js",
+      "dependencies": []
+    },
+    "lib/scripts/graph-wasm.js": {
+      "modifiedTime": 1741106312633,
+      "sourceSize": 14021,
+      "exportedPath": "lib/scripts/graph-wasm.js",
+      "dependencies": []
+    },
+    "lib/scripts/graph-render-worker.js": {
+      "modifiedTime": 1741106312633,
+      "sourceSize": 5179,
+      "exportedPath": "lib/scripts/graph-render-worker.js",
+      "dependencies": []
+    },
+    "lib/scripts/tinycolor.js": {
+      "modifiedTime": 1741106312633,
+      "sourceSize": 29832,
+      "exportedPath": "lib/scripts/tinycolor.js",
+      "dependencies": []
+    },
+    "lib/scripts/pixi.js": {
+      "modifiedTime": 1741106312633,
+      "sourceSize": 449509,
+      "exportedPath": "lib/scripts/pixi.js",
+      "dependencies": []
+    },
+    "lib/scripts/minisearch.js": {
+      "modifiedTime": 1741106432134,
+      "sourceSize": 29422,
+      "exportedPath": "lib/scripts/minisearch.js",
+      "dependencies": []
+    },
+    "lib/media/favicon.png": {
+      "modifiedTime": 1741106432134,
+      "sourceSize": 1105,
+      "exportedPath": "lib/media/favicon.png",
+      "dependencies": []
+    },
+    "lib/scripts/graph-data.js": {
+      "modifiedTime": 1741106312633,
+      "sourceSize": 2505,
+      "exportedPath": "lib/scripts/graph-data.js",
+      "dependencies": []
+    },
+    "lib/styles/obsidian.css": {
+      "modifiedTime": 1741106432134,
+      "sourceSize": 137305,
+      "exportedPath": "lib/styles/obsidian.css",
+      "dependencies": []
+    },
+    "lib/styles/theme.css": {
+      "modifiedTime": 1741106432134,
+      "sourceSize": 225163,
+      "exportedPath": "lib/styles/theme.css",
+      "dependencies": []
+    },
+    "lib/styles/global-variable-styles.css": {
+      "modifiedTime": 1741106432134,
+      "sourceSize": 262,
+      "exportedPath": "lib/styles/global-variable-styles.css",
+      "dependencies": []
+    },
+    "lib/styles/main-styles.css": {
+      "modifiedTime": 1741106432134,
+      "sourceSize": 23130,
+      "exportedPath": "lib/styles/main-styles.css",
+      "dependencies": []
+    },
+    "index.md": {
+      "modifiedTime": 1741106312633,
+      "sourceSize": 44,
+      "exportedPath": "index.html",
+      "dependencies": []
+    }
+  }
+}
